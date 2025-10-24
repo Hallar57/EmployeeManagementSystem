@@ -41,22 +41,22 @@ $result = $conn->query($sql);
       if ($result->num_rows > 0) {
         echo "<table>";
         echo "<tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Age</th>
-        <th></th>
-        <th></th>
+          <th></th>
+          <th></th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Age</th>
         </tr>";
 
         while ($row = $result->fetch_assoc()) {
           echo "<tr>
-          <td>" . $row["id"] . "</td>
-          <td>" . $row["name"] . "</td>
-          <td>" . $row["email"] . "</td>
-          <td>" . $row["age"] . "</td>
-          <td><a id='updatebutton' href=update.php?id=" . $row["id"] . " >Update</a></td>
-          <td><a id='deletebutton' href=delete.php?id=" . $row["id"] . " >Delete</a></td>
+            <td><a id='updatebutton' href=update.php?id=" . $row["id"] . " >Update</a></td>
+            <td><a id='deletebutton' href=delete.php?id=" . $row["id"] . " >Delete</a></td>
+            <td>" . $row["id"] . "</td>
+            <td>" . $row["name"] . "</td>
+            <td>" . $row["email"] . "</td>
+            <td>" . $row["age"] . "</td>
           </tr>";
         }
         echo "</table>";
