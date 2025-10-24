@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Employee Management</title>
   <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
   <div class="navbar">
     <form class="searchbar" action="search.php" method="GET">
@@ -29,7 +31,7 @@
     <form action="list.php" method="GET">
       <?php
       include 'list.php';
-      if($result->num_rows>0){
+      if ($result->num_rows > 0) {
         echo "<table>";
         echo "<tr>
         <th>ID</th>
@@ -39,15 +41,15 @@
         <th></th>
         <th></th>
         </tr>";
-        
-        while($row = $result->fetch_assoc()){
+
+        while ($row = $result->fetch_assoc()) {
           echo "<tr>
-          <td>".$row["id"] ."</td>
-          <td>".$row["name"] ."</td>
-          <td>".$row["email"] ."</td>
-          <td>".$row["age"] ."</td>
-          <td><a href=update.php?id=".$row["id"]." >Update</a></td>
-          <td><a href=delete.php?id=".$row["id"]." >Delete</a></td>
+          <td>" . $row["id"] . "</td>
+          <td>" . $row["name"] . "</td>
+          <td>" . $row["email"] . "</td>
+          <td>" . $row["age"] . "</td>
+          <td><a href=update.php?id=" . $row["id"] . " >Update</a></td>
+          <td><a href=delete.php?id=" . $row["id"] . " >Delete</a></td>
           </tr>";
         }
         echo "</table>";
@@ -58,4 +60,5 @@
     </form>
   </div>
 </body>
+
 </html>

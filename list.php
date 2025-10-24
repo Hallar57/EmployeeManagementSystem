@@ -1,7 +1,6 @@
 <?php
-  include 'db.php';
+include 'db.php';
 
-  $sql = "select * from user;";
-  $result = $conn->query($sql);
-
+$sql = "select * from user;";
+$result = $conn->query($sql);
 ?>
