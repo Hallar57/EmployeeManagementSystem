@@ -12,19 +12,19 @@
   <div class="navbar">
     <a class="title" href="index.php">Employee Management System</a>
     <form class="searchbar" action="search.php" method="GET">
-      <input type="text" name="search" required>
+      <input type="text" name="search" required placeholder="Search...">
       <button type="submit">Search</button>
     </form>
   </div>
 
   <div class="insert">
     <form action="insert.php" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" name="name" required>
-      <label for="email">Email:</label>
-      <input type="email" name="email" required>
-      <label for="age">Age:</label>
-      <input type="number" name="age" required>
+      <!--<label for="name">Name:</label>-->
+      <input type="text" name="name" required placeholder="Name">
+      <!--<label for="email">Email:</label>-->
+      <input type="email" name="email" required placeholder="Email">
+      <!--<label for="age">Age:</label>-->
+      <input type="number" name="age" required placeholder="Age">
       <button type="submit">Insert</button>
     </form>
   </div>
@@ -49,8 +49,8 @@
           <td>" . $row["name"] . "</td>
           <td>" . $row["email"] . "</td>
           <td>" . $row["age"] . "</td>
-          <td><a href=update.php?id=" . $row["id"] . " >Update</a></td>
-          <td><a href=delete.php?id=" . $row["id"] . " >Delete</a></td>
+          <td><a id='updatebutton' href=update.php?id=" . $row["id"] . " >Update</a></td>
+          <td><a id='deletebutton' href=delete.php?id=" . $row["id"] . " >Delete</a></td>
           </tr>";
         }
         echo "</table>";
