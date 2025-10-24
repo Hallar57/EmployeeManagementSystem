@@ -1,3 +1,18 @@
+<?php
+  include 'db.php';
+
+  $search = $_GET["search"];
+  //print($search);
+
+  
+  $sql = "select * from user where concat(id, name, email, age) like '%$search%'";
+
+  $result = $conn->query($sql);
+
+
+  //echo "<p><a href='index.php'>Go Back</a><p>";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,21 +29,9 @@
     </form>
   </div>
 
-  <div id="insert">
-    <form action="insert.php" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" name="name" required>
-      <label for="email">Email:</label>
-      <input type="email" name="email" required>
-      <label for="age">Age:</label>
-      <input type="number" name="age" required>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
   <div>
-    <form action="list.php" method="GET">
+    <form>
       <?php
-      include 'list.php';
       if($result->num_rows>0){
         echo "<table>";
         echo "<tr>
@@ -51,8 +54,6 @@
           </tr>";
         }
         echo "</table>";
-      } else {
-        echo "No Employees!";
       }
       ?>
     </form>

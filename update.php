@@ -1,30 +1,29 @@
 <?php
-include 'db.php';
+  include 'db.php';
 
-$id = $_GET["id"];
-
-$sql="select * from user where id='$id'";
-$result = $conn->query($sql);
-$row = $result->fetch_assoc();
-
-if(isset($_POST['update'])){
   $id = $_GET["id"];
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  $age = $_POST["age"];
 
-  $sql = "update user set name='$name', email='$email', age='$age' where id ='$id'";
+  $sql="select * from user where id='$id'";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
 
-  if($conn->query($sql)===TRUE){
-    echo "<div style='text-align:center; margin-top:100px'>";
-    echo "Updated Successfully";
-    echo "<p><a href='index.php'>Go Back</a><p>";
-    echo "</div>";
-  } else {
-    echo $conn->error;
+  if(isset($_POST['update'])){
+    $id = $_GET["id"];
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $age = $_POST["age"];
+
+    $sql = "update user set name='$name', email='$email', age='$age' where id ='$id'";
+
+    if($conn->query($sql)===TRUE){
+      echo "<div style='text-align:center; margin-top:100px'>";
+      echo "Updated Successfully";
+      echo "<p><a href='index.php'>Go Back</a><p>";
+      echo "</div>";
+    } else {
+      echo $conn->error;
+    }
   }
-}
-
 ?>
 
 <!DOCTYPE html>
