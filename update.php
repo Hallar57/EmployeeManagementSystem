@@ -16,10 +16,11 @@
     $sql = "update user set name='$name', email='$email', age='$age' where id ='$id'";
 
     if($conn->query($sql)===TRUE){
-      echo "<div style='text-align:center; margin-top:100px'>";
-      echo "Updated Successfully";
-      echo "<p><a href='index.php'>Go Back</a><p>";
-      echo "</div>";
+      //echo "<div style='text-align:center; margin-top:100px'>";
+      //echo "Updated Successfully";
+      //echo "<p><a href='index.php'>Go Back</a><p>";
+      //echo "</div>";
+      echo '<script>alert("Updated!")</script>';
     } else {
       echo $conn->error;
     }
@@ -31,11 +32,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Employee Management</title>
-  <link rel="stylesheet" href="style.css?v=1.0">
+  <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-  <div id="insert">
+    <div class="navbar" style="text-align: left;">
+      <button ><a href="index.php">Go Back</a></button>
+  </div>
+  <div class="insert">
     <form action="" method="POST">
       <label for="name">Name:</label>
       <input type="text" name="name" value ="<?php echo $row['name']; ?>" required>

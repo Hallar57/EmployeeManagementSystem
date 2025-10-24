@@ -7,14 +7,14 @@
 
 </head>
 <body>
-  <div id="searchbar">
-    <form action="search.php" method="GET">
+  <div class="navbar">
+    <form class="searchbar" action="search.php" method="GET">
       <input type="text" name="search" required>
       <button type="submit">Search</button>
     </form>
   </div>
 
-  <div id="insert">
+  <div class="insert">
     <form action="insert.php" method="POST">
       <label for="name">Name:</label>
       <input type="text" name="name" required>
@@ -22,7 +22,7 @@
       <input type="email" name="email" required>
       <label for="age">Age:</label>
       <input type="number" name="age" required>
-      <button type="submit">Submit</button>
+      <button type="submit">Insert</button>
     </form>
   </div>
   <div>
@@ -52,7 +52,7 @@
         }
         echo "</table>";
       } else {
-        echo "No Employees!";
+        echo "<h1 style='text-align: center;'>No Employees</h1>";
       }
       ?>
     </form>

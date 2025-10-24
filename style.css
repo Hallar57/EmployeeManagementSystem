@@ -4,14 +4,23 @@ html, body{
   margin: 0;
 }
 
-
-#searchbar{
-  background: #a0a0a0;
+.navbar{
+  background-color: #a0a0a0;
   padding: 10px;
-  text-align: right;
+  
+  overflow: hidden;
+
 }
 
-#insert{
+.navbar a{
+  float: left;
+}
+
+.navbar .searchbar{
+  float: right;
+}
+
+.insert{
   text-align: center;
   padding-bottom: 50px;
   padding-top: 50px;
@@ -21,7 +30,7 @@ html, body{
   font-weight: bold;
 }
 
-#edit{
+.edit{
   text-align: center;
   margin-top: 200px;
   padding-bottom: 50px;
