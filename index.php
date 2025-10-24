@@ -39,8 +39,8 @@
           <td>".$row["name"] ."</td>
           <td>".$row["email"] ."</td>
           <td>".$row["age"] ."</td>
-          <td><a href=delete.php?id=".$row["id"]." >Delete</a></td>
           <td><a href=update.php?id=".$row["id"]." >Update</a></td>
+          <td><a href=delete.php?id=".$row["id"]." >Delete</a></td>
           </tr>";
         }
         echo "</table>";
