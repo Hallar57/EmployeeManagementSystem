@@ -26,7 +26,7 @@ $result = $conn->query($sql);
 <body>
 
   <div class="navbar">
-    <a href="index.php">Home</a>
+    <a class="title" href="index.php">Employee Management System</a>
     <div class="searchbar">
       <form action="search.php" method="GET">
         <input type="text" name="search" required>

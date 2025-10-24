@@ -20,11 +20,13 @@ if (isset($_POST['update'])) {
     //echo "Updated Successfully";
     //echo "<p><a href='index.php'>Go Back</a><p>";
     //echo "</div>";
-    echo '<script>alert("Updated!")</script>';
+    header("Location: update.php?id=$id");
   } else {
     echo $conn->error;
   }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +41,7 @@ if (isset($_POST['update'])) {
 
 <body>
   <div class="navbar">
-    <a href="index.php">Home</a>
+    <a class="title" href="index.php">Employee Management System</a>
   </div>
 
   <div class="insert">

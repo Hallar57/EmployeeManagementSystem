@@ -9,10 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $sql = "insert into user (name, email, age) values ('$name', '$email', '$age');";
 
   if ($conn->query($sql) === TRUE) {
-    echo "<div style='text-align:center; margin-top:100px'>";
-    echo "Added Successfully";
-    echo "<p><a href='index.php'>Go Back</a><p>";
-    echo "</div>";
+    // echo "<div style='text-align:center; margin-top:100px'>";
+    // echo "Added Successfully";
+    // echo "<p><a href='index.php'>Go Back</a><p>";
+    // echo "</div>";
+    header("Location: index.php");
   } else {
     echo $conn->error;
   }

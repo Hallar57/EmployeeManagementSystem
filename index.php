@@ -10,6 +10,7 @@
 
 <body>
   <div class="navbar">
+    <a class="title" href="index.php">Employee Management System</a>
     <form class="searchbar" action="search.php" method="GET">
       <input type="text" name="search" required>
       <button type="submit">Search</button>
