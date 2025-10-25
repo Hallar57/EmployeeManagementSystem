@@ -4,11 +4,9 @@ include '../database/db.php';
 $search = $_GET["search"];
 //print($search);
 
-
 $sql = "select * from user where concat(id, name, email, age) like '%$search%'";
 
 $result = $conn->query($sql);
-
 
 //echo "<p><a href='index.php'>Go Back</a><p>";
 ?>
@@ -19,7 +17,7 @@ $result = $conn->query($sql);
 <head>
   <meta charset="UTF-8">
   <title>Employee Management</title>
- <link rel="stylesheet" href="../css/homepage.css">
+  <link rel="stylesheet" href="../css/homepage.css">
   <link rel="stylesheet" href="../css/navbar.css">
   <link rel="stylesheet" href="../css/table.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
