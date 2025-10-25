@@ -24,12 +24,11 @@
 
   <div class="insert">
     <form action="../database/insert.php" method="POST">
-      <!--<label for="name">Name:</label>-->
       <input type="text" name="name" required placeholder="Name">
-      <!--<label for="email">Email:</label>-->
+      <input type="number" name="dept_id" required placeholder="Department ID">
+      <input type="number" name="m_id" required placeholder="Manager ID">
       <input type="email" name="email" required placeholder="Email">
-      <!--<label for="age">Age:</label>-->
-      <input type="number" name="age" required placeholder="Age">
+      <input type="tel" name="phone" required placeholder="Phone">
       <button type="submit">Insert</button>
     </form>
   </div>
@@ -44,18 +43,22 @@
           <th></th>
           <th>ID</th>
           <th>Name</th>
+          <th>Department ID</th>
+          <th>Manager ID</th>
           <th>Email</th>
-          <th>Age</th>
+          <th>Phone</th>
         </tr>";
 
         while ($row = $result->fetch_assoc()) {
           echo "<tr>
-            <td><a id='updatebutton' href=update.php?id=" . $row["id"] . " >Update</a></td>
-            <td><a id='deletebutton' href=../database/delete.php?id=" . $row["id"] . " >Delete</a></td>
-            <td>" . $row["id"] . "</td>
+            <td><a id='updatebutton' href=update.php?emp_id=" . $row["emp_id"] . " >Update</a></td>
+            <td><a id='deletebutton' href=../database/delete.php?emp_id=" . $row["emp_id"] . " >Delete</a></td>
+            <td>" . $row["emp_id"] . "</td>
             <td>" . $row["name"] . "</td>
+            <td>" . $row["dept_id"] . "</td>
+            <td>" . $row["m_id"] . "</td>
             <td>" . $row["email"] . "</td>
-            <td>" . $row["age"] . "</td>
+            <td>" . $row["phone"] . "</td>
           </tr>";
         }
         echo "</table>";

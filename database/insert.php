@@ -3,10 +3,12 @@ include 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = $_POST["name"];
+  $dept_id = $_POST["dept_id"];
+  $m_id = $_POST["m_id"];
   $email = $_POST["email"];
-  $age = $_POST["age"];
+  $phone = $_POST["phone"];
 
-  $sql = "insert into user (name, email, age) values ('$name', '$email', '$age');";
+  $sql = "insert into employee (name, dept_id, m_id, email, phone) values ('$name','$dept_id', '$m_id', '$email', '$phone');";
 
   if ($conn->query($sql) === TRUE) {
     // echo "<div style='text-align:center; margin-top:100px'>";

@@ -1,26 +1,27 @@
 <?php
 include '../database/db.php';
 
-$id = $_GET["id"];
+$emp_id = $_GET["emp_id"];
 
-$sql = "select * from user where id='$id'";
+$sql = "select * from employee where emp_id='$emp_id'";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 
 if (isset($_POST['update'])) {
-  $id = $_GET["id"];
   $name = $_POST["name"];
+  $dept_id = $_POST["dept_id"];
+  $m_id = $_POST["m_id"];
   $email = $_POST["email"];
-  $age = $_POST["age"];
+  $phone = $_POST["phone"];
 
-  $sql = "update user set name='$name', email='$email', age='$age' where id ='$id'";
+  $sql = "update employee set name='$name', dept_id='$dept_id', m_id='$m_id', email='$email', phone='$phone' where emp_id ='$emp_id'";
 
   if ($conn->query($sql) === TRUE) {
     //echo "<div style='text-align:center; margin-top:100px'>";
     //echo "Updated Successfully";
     //echo "<p><a href='index.php'>Go Back</a><p>";
     //echo "</div>";
-    header("Location: update.php?id=$id");
+    header("Location: update.php?emp_id=$emp_id");
   } else {
     echo $conn->error;
   }
@@ -51,12 +52,11 @@ if (isset($_POST['update'])) {
 
   <div class="insert">
     <form action="" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" name="name" value="<?php echo $row['name']; ?>" required>
-      <label for="email">Email:</label>
-      <input type="email" name="email" value="<?php echo $row['email']; ?>" required>
-      <label for="age">Age:</label>
-      <input type="number" name="age" value="<?php echo $row['age']; ?>" required>
+      <input type="text" name="name" required value="<?php echo $row["name"];?>">
+      <input type="number" name="dept_id" required value="<?php echo $row["dept_id"]?>">
+      <input type="number" name="m_id" required value="<?php echo $row["m_id"]?>">
+      <input type="email" name="email" required value="<?php echo $row["email"]?>">
+      <input type="tel" name="phone" required value="<?php echo $row["phone"]?>">
       <button type="submit" name="update">Update</button>
     </form>
   </div>

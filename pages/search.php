@@ -39,8 +39,9 @@ $result = $conn->query($sql);
   </div>
 
   <div>
-    <form>
+    <form action="../database/list.php" method="GET">
       <?php
+      include '../database/list.php';
       if ($result->num_rows > 0) {
         echo "<table>";
         echo "<tr>
@@ -48,23 +49,27 @@ $result = $conn->query($sql);
           <th></th>
           <th>ID</th>
           <th>Name</th>
+          <th>Department ID</th>
+          <th>Manager ID</th>
           <th>Email</th>
-          <th>Age</th>
+          <th>Phone</th>
         </tr>";
 
         while ($row = $result->fetch_assoc()) {
           echo "<tr>
-            <td><a id='updatebutton' href=update.php?id=" . $row["id"] . " >Update</a></td>
-            <td><a id='deletebutton' href=../database/delete.php?id=" . $row["id"] . " >Delete</a></td>
-            <td>" . $row["id"] . "</td>
+            <td><a id='updatebutton' href=update.php?emp_id=" . $row["emp_id"] . " >Update</a></td>
+            <td><a id='deletebutton' href=../database/delete.php?emp_id=" . $row["emp_id"] . " >Delete</a></td>
+            <td>" . $row["emp_id"] . "</td>
             <td>" . $row["name"] . "</td>
+            <td>" . $row["dept_id"] . "</td>
+            <td>" . $row["m_id"] . "</td>
             <td>" . $row["email"] . "</td>
-            <td>" . $row["age"] . "</td>
+            <td>" . $row["phone"] . "</td>
           </tr>";
         }
         echo "</table>";
       } else {
-        echo "<h1 style='text-align: center;'>No Results</h1>";
+        echo "<h1 style='text-align: center;'>No Employees</h1>";
       }
       ?>
     </form>
