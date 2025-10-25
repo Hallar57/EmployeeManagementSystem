@@ -1,6 +1,6 @@
 <?php
 include 'db.php';
-$sql = "delete from employee where emp_id = " . $_GET["id"];
+$sql = "delete from employee where emp_id = " . $_GET["emp_id"];
 
 if ($conn->query($sql) === TRUE) {
   //echo "<script type='text/javascript'>setTimeout(function(){location.reload();}, 5000);</script>";

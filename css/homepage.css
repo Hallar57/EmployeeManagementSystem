@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  color: #342e3a;
+}
+
 .insert {
   text-align: center;
   padding-bottom: 25px;

@@ -1,11 +1,24 @@
+<?php
+include '../database/db.php';
+
+$search = $_GET["search"];
+//print($search);
+
+$sql = "select * from employee where concat(emp_id, name, email, phone) like '%$search%'";
+
+$result = $conn->query($sql);
+
+//echo "<p><a href='index.php'>Go Back</a><p>";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <title>Employees</title>
+  <title>Employee Management</title>
   <link rel="stylesheet" href="../css/homepage.css">
-  <link rel="stylesheet" href="../css/navbar.css?v=1.0">
+  <link rel="stylesheet" href="../css/navbar.css">
   <link rel="stylesheet" href="../css/table.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,34 +27,20 @@
 </head>
 
 <body>
+
   <div class="navbar">
-    <ul>
-      <li><a href="homepage.php" class="active" >Employees</a></li>
-      <li><a href="departments.php">Departments</a></li>
-      <li><a href="managers.php">Managers</a></li>
-      <li style="float:right">
-        <form class="searchbar" action="searchemployees.php" method="GET">
-          <input type="text" name="search" required placeholder="Search...">
-          <button type="submit">Search</button>
-        </form>
-      </li>
-    </ul>
+    <a class="title" href="homepage.php">Employee Management System</a>
+    <div class="searchbar">
+      <form action="searchemployees.php" method="GET">
+        <input type="text" name="search" required>
+        <button type="submit">Search</button>
+      </form>
+    </div>
   </div>
 
-  <div class="insert">
-    <form action="../database/insertemployees.php" method="POST">
-      <input type="text" name="name" required placeholder="Name">
-      <input type="number" name="dept_id" required placeholder="Department ID">
-      <input type="number" name="m_id" required placeholder="Manager ID">
-      <input type="email" name="email" required placeholder="Email">
-      <input type="tel" name="phone" required placeholder="Phone">
-      <button type="submit">Insert</button>
-    </form>
-  </div>
   <div>
-    <form action="../database/listemployees.php" method="GET">
+    <form action="searchemployees.php" method="GET">
       <?php
-      include '../database/listemployees.php';
       if ($result->num_rows > 0) {
         echo "<table>";
         echo "<tr>
@@ -57,8 +56,8 @@
 
         while ($row = $result->fetch_assoc()) {
           echo "<tr>
-            <td><a id='updatebutton' href=updateemployees.php?emp_id=" . $row["emp_id"] . " >Update</a></td>
-            <td><a id='deletebutton' href=../database/deleteemployees.php?emp_id=" . $row["emp_id"] . " >Delete</a></td>
+            <td><a id='updatebutton' href=update.php?emp_id=" . $row["emp_id"] . " >Update</a></td>
+            <td><a id='deletebutton' href=../database/delete.php?emp_id=" . $row["emp_id"] . " >Delete</a></td>
             <td>" . $row["emp_id"] . "</td>
             <td>" . $row["name"] . "</td>
             <td>" . $row["dept_id"] . "</td>

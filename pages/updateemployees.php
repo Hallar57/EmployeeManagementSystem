@@ -21,7 +21,7 @@ if (isset($_POST['update'])) {
     //echo "Updated Successfully";
     //echo "<p><a href='index.php'>Go Back</a><p>";
     //echo "</div>";
-    header("Location: update.php?emp_id=$emp_id");
+    header("Location: updateemployees.php?emp_id=$emp_id");
   } else {
     echo $conn->error;
   }
