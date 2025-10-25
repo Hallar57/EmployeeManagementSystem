@@ -1,0 +1,30 @@
+.navbar {
+  background-color: #342e3a;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.navbar a {
+  float: left;
+  padding: 5px;
+  border: 0;
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .searchbar {
+  float: right;
+}
+
+.navbar #title {
+  float:left;
+  padding: 5px;
+  border: 0;
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}

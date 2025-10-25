@@ -9,7 +9,7 @@ if ($conn->query($sql) === TRUE) {
   //echo "Deleted Successfully";
   //echo "<p><a href='index.php'>Go Back</a><p>";
   //echo "</div>";
-  header("Location: index.php");
+  header("Location: ../pages/homepage.php");
 } else {
   echo $conn->error;
 }
