@@ -17,7 +17,7 @@
   <div class="navbar">
     <a class="title" href="index.php">Employee Management System</a>
     <form class="searchbar" action="./database/login.php" method="POST">
-      <input type="text" name="password" required placeholder="Username">
+      <input type="text" name="username" required placeholder="Username">
       <input type="password" name="password" required placeholder="Password">
       <button type="submit">Login</button>
     </form>

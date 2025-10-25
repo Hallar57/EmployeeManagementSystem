@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $row = $result->fetch_assoc();
 
 
-  if ($row["username"==$username && $row["password"==$password]]) {
+  if ($row["username"]==$username && $row["password"]==$password) {
     // echo "<div style='text-align:center; margin-top:100px'>";
     // echo "Added Successfully";
     // echo "<p><a href='index.php'>Go Back</a><p>";
@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //echo "<script type='text/javascript'>alert('Successful!');location='../index.php';</script>";
 
   } else {
+    //echo $conn->error;
     echo "<script type='text/javascript'>alert('Invalid Username or Password');location='../index.php';</script>";
   }
 }

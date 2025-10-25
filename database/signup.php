@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<script type='text/javascript'>alert('Successful!');location='../index.php';</script>";
 
   } else {
+    //echo $conn->error;
     echo "<script type='text/javascript'>alert('Invalid Username or Password');location='../index.php';</script>";
   }
 }
