@@ -47,16 +47,27 @@ if (isset($_POST['update'])) {
 
 <body>
   <div class="navbar">
-    <a class="title" href="homepage.php">Employee Management System</a>
+    <ul>
+      <li><a href="homepage.php" class="active">Employees</a></li>
+      <li><a href="departments.php">Departments</a></li>
+      <li><a href="managers.php">Managers</a></li>
+      <li style="float:right">
+        <form class="searchbar" action="searchemployees.php" method="GET">
+          <input type="text" name="search" required placeholder="Search...">
+          <button type="submit">Search</button>
+        </form>
+      </li>
+    </ul>
   </div>
+
 
   <div class="insert">
     <form action="" method="POST">
-      <input type="text" name="name" required value="<?php echo $row["name"];?>">
-      <input type="number" name="dept_id" required value="<?php echo $row["dept_id"]?>">
-      <input type="number" name="m_id" required value="<?php echo $row["m_id"]?>">
-      <input type="email" name="email" required value="<?php echo $row["email"]?>">
-      <input type="tel" name="phone" required value="<?php echo $row["phone"]?>">
+      <input type="text" name="name" required value="<?php echo $row["name"]; ?>">
+      <input type="number" name="dept_id" required value="<?php echo $row["dept_id"] ?>">
+      <input type="number" name="m_id" required value="<?php echo $row["m_id"] ?>">
+      <input type="email" name="email" required value="<?php echo $row["email"] ?>">
+      <input type="tel" name="phone" required value="<?php echo $row["phone"] ?>">
       <button type="submit" name="update">Update</button>
     </form>
   </div>

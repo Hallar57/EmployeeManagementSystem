@@ -18,7 +18,7 @@
     <ul>
       <li><a href="homepage.php">Employees</a></li>
       <li><a href="departments.php">Departments</a></li>
-      <li><a href="managers.php" class="active" >Managers</a></li>
+      <li><a href="managers.php" class="active">Managers</a></li>
       <li style="float:right">
         <form class="searchbar" action="searchmanagers.php" method="GET">
           <input type="text" name="search" required placeholder="Search...">

@@ -29,14 +29,19 @@ $result = $conn->query($sql);
 <body>
 
   <div class="navbar">
-    <a class="title" href="homepage.php">Employee Management System</a>
-    <div class="searchbar">
-      <form action="searchemployees.php" method="GET">
-        <input type="text" name="search" required>
-        <button type="submit">Search</button>
-      </form>
-    </div>
+    <ul>
+      <li><a href="homepage.php" class="active">Employees</a></li>
+      <li><a href="departments.php">Departments</a></li>
+      <li><a href="managers.php">Managers</a></li>
+      <li style="float:right">
+        <form class="searchbar" action="searchemployees.php" method="GET">
+          <input type="text" name="search" required placeholder="Search...">
+          <button type="submit">Search</button>
+        </form>
+      </li>
+    </ul>
   </div>
+
 
   <div>
     <form action="searchemployees.php" method="GET">

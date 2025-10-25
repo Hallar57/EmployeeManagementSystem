@@ -16,7 +16,7 @@
 <body>
   <div class="navbar">
     <ul>
-      <li><a href="homepage.php" class="active" >Employees</a></li>
+      <li><a href="homepage.php" class="active">Employees</a></li>
       <li><a href="departments.php">Departments</a></li>
       <li><a href="managers.php">Managers</a></li>
       <li style="float:right">

@@ -45,13 +45,23 @@ if (isset($_POST['update'])) {
 
 <body>
   <div class="navbar">
-    <a class="title" href="homepage.php">department Management System</a>
+    <ul>
+      <li><a href="homepage.php">Employees</a></li>
+      <li><a href="departments.php" class="active">Departments</a></li>
+      <li><a href="managers.php">Managers</a></li>
+      <li style="float:right">
+        <form class="searchbar" action="searchdepartments.php" method="GET">
+          <input type="text" name="search" required placeholder="Search...">
+          <button type="submit">Search</button>
+        </form>
+      </li>
+    </ul>
   </div>
 
   <div class="insert">
     <form action="" method="POST">
-      <input type="text" name="name" required value="<?php echo $row["name"];?>">
-      <input type="text" name="building" required value="<?php echo $row["building"]?>">
+      <input type="text" name="name" required value="<?php echo $row["name"]; ?>">
+      <input type="text" name="building" required value="<?php echo $row["building"] ?>">
       <button type="submit" name="update">Update</button>
     </form>
   </div>
