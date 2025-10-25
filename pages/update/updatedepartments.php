@@ -1,5 +1,5 @@
 <?php
-include '../database/db.php';
+include '../../database/db.php';
 
 $dept_id = $_GET["dept_id"];
 
@@ -34,9 +34,9 @@ if (isset($_POST['update'])) {
 <head>
   <meta charset="UTF-8">
   <title>department Management</title>
-  <link rel="stylesheet" href="../css/homepage.css">
-  <link rel="stylesheet" href="../css/navbar.css">
-  <link rel="stylesheet" href="../css/table.css">
+  <link rel="stylesheet" href="../../css/homepage.css">
+  <link rel="stylesheet" href="../../css/navbar.css">
+  <link rel="stylesheet" href="../../css/table.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -46,9 +46,9 @@ if (isset($_POST['update'])) {
 <body>
   <div class="navbar">
     <ul>
-      <li><a href="homepage.php">Employees</a></li>
-      <li><a href="departments.php" class="active">Departments</a></li>
-      <li><a href="managers.php">Managers</a></li>
+      <li><a href="../home/employees.php">Employees</a></li>
+      <li><a href="../home/departments.php" class="active">Departments</a></li>
+      <li><a href="../home/managers.php">Managers</a></li>
       <li style="float:right">
         <form class="searchbar" action="searchdepartments.php" method="GET">
           <input type="text" name="search" required placeholder="Search...">

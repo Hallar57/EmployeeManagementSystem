@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Employees</title>
-  <link rel="stylesheet" href="../css/homepage.css">
-  <link rel="stylesheet" href="../css/navbar.css?v=1.0">
-  <link rel="stylesheet" href="../css/table.css">
+  <link rel="stylesheet" href="../../css/homepage.css">
+  <link rel="stylesheet" href="../../css/navbar.css?v=1.0">
+  <link rel="stylesheet" href="../../css/table.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -16,9 +16,9 @@
 <body>
   <div class="navbar">
     <ul>
-      <li><a href="homepage.php" class="active">Employees</a></li>
-      <li><a href="departments.php">Departments</a></li>
-      <li><a href="managers.php">Managers</a></li>
+      <li><a href="../home/employees.php" class="active">Employees</a></li>
+      <li><a href="../home/departments.php">Departments</a></li>
+      <li><a href="../home/managers.php">Managers</a></li>
       <li style="float:right">
         <form class="searchbar" action="searchemployees.php" method="GET">
           <input type="text" name="search" required placeholder="Search...">
@@ -29,7 +29,7 @@
   </div>
 
   <div class="insert">
-    <form action="../database/insertemployees.php" method="POST">
+    <form action="../../database/insert/insertemployees.php" method="POST">
       <input type="text" name="name" required placeholder="Name">
       <input type="number" name="dept_id" required placeholder="Department ID">
       <input type="number" name="m_id" required placeholder="Manager ID">
@@ -39,9 +39,9 @@
     </form>
   </div>
   <div>
-    <form action="../database/listemployees.php" method="GET">
+    <form action="../../database/list/listemployees.php" method="GET">
       <?php
-      include '../database/listemployees.php';
+      include '../../database/list/listemployees.php';
       if ($result->num_rows > 0) {
         echo "<table>";
         echo "<tr>
@@ -57,8 +57,8 @@
 
         while ($row = $result->fetch_assoc()) {
           echo "<tr>
-            <td><a id='updatebutton' href=updateemployees.php?emp_id=" . $row["emp_id"] . " >Update</a></td>
-            <td><a id='deletebutton' href=../database/deleteemployees.php?emp_id=" . $row["emp_id"] . " >Delete</a></td>
+            <td><a id='updatebutton' href=../update/updateemployees.php?emp_id=" . $row["emp_id"] . " >Update</a></td>
+            <td><a id='deletebutton' href=../../database/delete/deleteemployees.php?emp_id=" . $row["emp_id"] . " >Delete</a></td>
             <td>" . $row["emp_id"] . "</td>
             <td>" . $row["name"] . "</td>
             <td>" . $row["dept_id"] . "</td>

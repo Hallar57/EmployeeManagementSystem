@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include '../../database/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = $_POST["name"];
@@ -11,11 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $sql = "insert into employee (name, dept_id, m_id, email, phone) values ('$name','$dept_id', '$m_id', '$email', '$phone');";
 
   if ($conn->query($sql) === TRUE) {
-    // echo "<div style='text-align:center; margin-top:100px'>";
-    // echo "Added Successfully";
-    // echo "<p><a href='index.php'>Go Back</a><p>";
-    // echo "</div>";
-    header("Location: ../pages/homepage.php");
+    header("Location: ../../pages/home/employees.php");
   } else {
     echo $conn->error;
   }
