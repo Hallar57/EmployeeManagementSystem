@@ -7,8 +7,6 @@ $search = $_GET["search"];
 $sql = "select * from employee where concat(emp_id, name, email, phone) like '%$search%'";
 
 $result = $conn->query($sql);
-
-//echo "<p><a href='index.php'>Go Back</a><p>";
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +70,7 @@ $result = $conn->query($sql);
         }
         echo "</table>";
       } else {
-        echo "<h1 style='text-align: center;'>No Employees</h1>";
+        echo "<h1 style='text-align: center;'>No Employees Found</h1>";
       }
       ?>
     </form>

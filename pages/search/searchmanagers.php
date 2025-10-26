@@ -7,8 +7,6 @@ $search = $_GET["search"];
 $sql = "select * from manager where concat(m_id, name) like '%$search%'";
 
 $result = $conn->query($sql);
-
-//echo "<p><a href='index.php'>Go Back</a><p>";
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +65,7 @@ $result = $conn->query($sql);
         }
         echo "</table>";
       } else {
-        echo "<h1 style='text-align: center;'>No managers Found</h1>";
+        echo "<h1 style='text-align: center;'>No Managers Found</h1>";
       }
       ?>
     </form>

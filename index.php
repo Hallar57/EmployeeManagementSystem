@@ -17,8 +17,8 @@
   <div class="navbar">
     <a class="title" href="index.php">Employee Management System</a>
     <form class="searchbar" action="./database/login.php" method="POST">
-      <input type="text" name="username" required placeholder="Username">
-      <input type="password" name="password" required placeholder="Password">
+      <input type="text" name="username" required placeholder="Username" maxlength="50">
+      <input type="password" name="password" required placeholder="Password" maxlength="25">
       <button type="submit">Login</button>
     </form>
   </div>
@@ -26,12 +26,9 @@
   <div class="insert">
     <h1 id="signuptitle">Sign Up Here!</h1>
     <form action="./database/signup.php" method="POST">
-      <!--<label for="name">Name:</label>-->
-      <input type="text" name="username" required placeholder="Username">
-      <!--<label for="email">Email:</label>-->
-      <input type="email" name="email" required placeholder="Email">
-      <!--<label for="age">Age:</label>-->
-      <input type="password" name="password" required placeholder="Password">
+      <input type="text" name="username" required placeholder="Username" maxlength="50">
+      <input type="email" name="email" required placeholder="Email" maxlength="255">
+      <input type="password" name="password" required placeholder="Password" maxlength="25">
       <button type="submit">Sign Up</button>
     </form>
   </div>

@@ -18,22 +18,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $sql = "select username, password from login where username = '$username'";
 
   $result = $conn->query($sql);
-  
+
   $row = $result->fetch_assoc();
 
 
-  if ($row["username"]==$username && $row["password"]==$password) {
-    // echo "<div style='text-align:center; margin-top:100px'>";
-    // echo "Added Successfully";
-    // echo "<p><a href='index.php'>Go Back</a><p>";
-    // echo "</div>";
+  if ($row["username"] == $username && $row["password"] == $password) {
     header("Location: ../../pages/home/employees.php");
-    //echo "<script type='text/javascript'>alert('Successful!');location='../index.php';</script>";
-
   } else {
     //echo $conn->error;
     echo "<script type='text/javascript'>alert('Invalid Username or Password');location='../../index.php';</script>";
   }
 }
-
 ?>

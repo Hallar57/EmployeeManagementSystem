@@ -58,7 +58,7 @@ if (isset($_POST['update'])) {
 
   <div class="insert">
     <form action="" method="POST">
-      <input type="text" name="name" required value="<?php echo $row["name"]; ?>"  maxlength="50">
+      <input type="text" name="name" required value="<?php echo $row["name"]; ?>" maxlength="50">
       <input type="number" name="dept_id" required value="<?php echo $row["dept_id"] ?>" min="1">
       <input type="tel" name="phone" required value="<?php echo $row["phone"] ?>" pattern="[0-9]{11}">
       <button type="submit" name="update">Update</button>

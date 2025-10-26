@@ -7,8 +7,6 @@ $search = $_GET["search"];
 $sql = "select * from department where concat(dept_id, name, building) like '%$search%'";
 
 $result = $conn->query($sql);
-
-//echo "<p><a href='index.php'>Go Back</a><p>";
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +39,7 @@ $result = $conn->query($sql);
       </li>
     </ul>
   </div>
-  
+
   <div>
     <form action="searchdepartments.php" method="GET">
       <?php

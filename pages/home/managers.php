@@ -32,7 +32,7 @@
     <form action="../../database/insert/insertmanagers.php" method="POST">
       <input type="text" name="name" required placeholder="Name" maxlength="50">
       <input type="number" name="dept_id" required placeholder="Department ID" min="1">
-      <input type="tel" name="phone" required placeholder="Phone"  pattern="[0-9]{11}">
+      <input type="tel" name="phone" required placeholder="Phone" pattern="[0-9]{11}">
       <button type="submit">Insert</button>
     </form>
   </div>
@@ -63,7 +63,7 @@
         }
         echo "</table>";
       } else {
-        echo "<h1 style='text-align: center;'>No Employees</h1>";
+        echo "<h1 style='text-align: center;'>No Managers</h1>";
       }
       ?>
     </form>

@@ -8,3 +8,4 @@ if ($conn->query($sql) === TRUE) {
 } else {
   echo $conn->error;
 }
+?>

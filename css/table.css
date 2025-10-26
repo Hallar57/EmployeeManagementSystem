@@ -6,15 +6,15 @@ tr:nth-child(even) {
   background-color: #a0a0a0;
 }
 
-table th{
+table th {
   background-color: #2b2730;
   color: white;
 }
 table tr {
   text-align: center;
-  COLOR: #342e3a;
+  color: #342e3a;
 }
 
-#deletebutton{
+#deletebutton {
   color: rgb(175, 0, 0);
 }

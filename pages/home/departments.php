@@ -60,7 +60,7 @@
         }
         echo "</table>";
       } else {
-        echo "<h1 style='text-align: center;'>No Employees</h1>";
+        echo "<h1 style='text-align: center;'>No Departments</h1>";
       }
       ?>
     </form>
