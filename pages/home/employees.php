@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Employees</title>
   <link rel="stylesheet" href="../../css/homepage.css">
-  <link rel="stylesheet" href="../../css/navbar.css?v=1.0">
+  <link rel="stylesheet" href="../../css/navbar.css">
   <link rel="stylesheet" href="../../css/table.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
