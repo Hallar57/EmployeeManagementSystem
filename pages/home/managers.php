@@ -29,7 +29,7 @@
   </div>
 
   <div class="insert">
-    <form action="../../database/insertmanagers.php" method="POST">
+    <form action="../../database/insert/insertmanagers.php" method="POST">
       <input type="text" name="name" required placeholder="Name">
       <input type="number" name="dept_id" required placeholder="Department ID">
       <input type="tel" name="phone" required placeholder="Phone">

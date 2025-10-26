@@ -20,7 +20,7 @@
       <li><a href="../home/departments.php" class="active">Departments</a></li>
       <li><a href="../home/managers.php">Managers</a></li>
       <li style="float:right">
-        <form class="searchbar" action="searchdepartments.php" method="GET">
+        <form class="searchbar" action="../search/searchdepartments.php" method="GET">
           <input type="text" name="search" required placeholder="Search...">
           <button type="submit">Search</button>
         </form>
