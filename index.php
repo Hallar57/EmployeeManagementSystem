@@ -18,7 +18,7 @@
     <a class="title" href="index.php">Employee Management System</a>
     <form class="searchbar" action="./database/login/login.php" method="POST">
       <input type="text" name="username" required placeholder="Username" maxlength="50">
-      <input type="password" name="password" required placeholder="Password" maxlength="25">
+      <input type="password" name="password" required placeholder="Password" minlength="8" maxlength="25">
       <button type="submit">Login</button>
     </form>
   </div>
@@ -28,7 +28,7 @@
     <form action="./database/login/signup.php" method="POST">
       <input type="text" name="username" required placeholder="Username" maxlength="50">
       <input type="email" name="email" required placeholder="Email" maxlength="255">
-      <input type="password" name="password" required placeholder="Password" maxlength="25">
+      <input type="password" name="password" required placeholder="Password" minlength="8" maxlength="25">
       <button type="submit">Sign Up</button>
     </form>
   </div>

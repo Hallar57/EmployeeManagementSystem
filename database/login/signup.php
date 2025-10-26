@@ -18,10 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $sql = "insert into login (username, email, password) values ('$username', '$email', '$password');";
 
-  if ($conn->query($sql) === TRUE) {
-    echo "<script type='text/javascript'>alert('Successful!');location='../../index.php';</script>";
-  } else {
-    //echo $conn->error;
+  try {
+    if ($conn->query($sql) === TRUE) {
+      echo "<script type='text/javascript'>alert('Successful!');location='../../index.php';</script>";
+    } else {
+      //echo $conn->error;
+      echo "<script type='text/javascript'>alert('Invalid Username or Password');location='../../index.php';</script>";
+    }
+  } catch (mysqli_sql_exception) {
     echo "<script type='text/javascript'>alert('Invalid Username or Password');location='../../index.php';</script>";
   }
 }
