@@ -9,7 +9,6 @@ $row = $result->fetch_assoc();
 
 if (isset($_POST['update'])) {
   $name = $_POST["name"];
-  $dept_id = $_POST["dept_id"];
   $building = $_POST["building"];
 
   $sql = "update department set name='$name', building='$building' where dept_id ='$dept_id'";

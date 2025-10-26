@@ -10,8 +10,6 @@ $row = $result->fetch_assoc();
 if (isset($_POST['update'])) {
   $name = $_POST["name"];
   $dept_id = $_POST["dept_id"];
-  $m_id = $_POST["m_id"];
-  $email = $_POST["email"];
   $phone = $_POST["phone"];
 
   $sql = "update manager set name='$name', dept_id='$dept_id', phone='$phone' where m_id ='$m_id'";

@@ -55,8 +55,8 @@ $result = $conn->query($sql);
 
         while ($row = $result->fetch_assoc()) {
           echo "<tr>
-            <td><a id='updatebutton' href=update.php?dept_id=" . $row["dept_id"] . " >Update</a></td>
-            <td><a id='deletebutton' href=../../database/delete.php?dept_id=" . $row["dept_id"] . " >Delete</a></td>
+            <td><a id='updatebutton' href=../update/updatedepartments.php?dept_id=" . $row["dept_id"] . " >Update</a></td>
+            <td><a id='deletebutton' href=../../database/delete/deletedepartments.php?dept_id=" . $row["dept_id"] . " >Delete</a></td>
             <td>" . $row["dept_id"] . "</td>
             <td>" . $row["name"] . "</td>
             <td>" . $row["building"] . "</td>

@@ -53,7 +53,7 @@
 
         while ($row = $result->fetch_assoc()) {
           echo "<tr>
-            <td><a id='updatebutton' href=updatemanagers.php?m_id=" . $row["m_id"] . " >Update</a></td>
+            <td><a id='updatebutton' href=../update/updatemanagers.php?m_id=" . $row["m_id"] . " >Update</a></td>
             <td><a id='deletebutton' href=../../database/delete/deletemanagers.php?m_id=" . $row["m_id"] . " >Delete</a></td>
             <td>" . $row["m_id"] . "</td>
             <td>" . $row["name"] . "</td>
