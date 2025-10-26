@@ -34,7 +34,7 @@
       <input type="number" name="dept_id" required placeholder="Department ID" min="1">
       <input type="number" name="m_id" required placeholder="Manager ID" min="1">
       <input type="email" name="email" required placeholder="Email" maxlength="255">
-      <input type="number" name="phone" required placeholder="Phone" minlength="11">
+      <input type="tel" name="phone" required placeholder="Phone" pattern="[0-9]{11}">
       <button type="submit">Insert</button>
     </form>
   </div>

@@ -31,7 +31,7 @@
   <div class="insert">
     <form action="../../database/insert/insertdepartments.php" method="POST">
       <input type="text" name="name" required placeholder="Name" maxlength="50">
-      <input type="number" name="building" required placeholder="Building" maxlength="25">
+      <input type="number" name="building" required placeholder="Building" min="1" maxlength="25">
       <button type="submit">Insert</button>
     </form>
   </div>
