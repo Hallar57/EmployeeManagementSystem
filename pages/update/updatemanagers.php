@@ -17,10 +17,6 @@ if (isset($_POST['update'])) {
   $sql = "update manager set name='$name', dept_id='$dept_id', phone='$phone' where m_id ='$m_id'";
 
   if ($conn->query($sql) === TRUE) {
-    //echo "<div style='text-align:center; margin-top:100px'>";
-    //echo "Updated Successfully";
-    //echo "<p><a href='index.php'>Go Back</a><p>";
-    //echo "</div>";
     header("Location: updatemanagers.php?m_id=$m_id");
   } else {
     echo $conn->error;
@@ -53,7 +49,7 @@ if (isset($_POST['update'])) {
       <li><a href="../home/managers.php" class="active">Managers</a></li>
       <li style="float:right">
         <form class="searchbar" action="../search/searchmanagers.php" method="GET">
-          <input type="text" name="search" required placeholder="Search...">
+          <input type="search" name="search" required placeholder="Search...">
           <button type="submit">Search</button>
         </form>
       </li>
@@ -62,9 +58,9 @@ if (isset($_POST['update'])) {
 
   <div class="insert">
     <form action="" method="POST">
-      <input type="text" name="name" required value="<?php echo $row["name"]; ?>">
-      <input type="number" name="dept_id" required value="<?php echo $row["dept_id"] ?>">
-      <input type="tel" name="phone" required value="<?php echo $row["phone"] ?>">
+      <input type="text" name="name" required value="<?php echo $row["name"]; ?>"  maxlength="50">
+      <input type="number" name="dept_id" required value="<?php echo $row["dept_id"] ?>" min="1">
+      <input type="tel" name="phone" required value="<?php echo $row["phone"] ?>" pattern="[0-9]{11}">
       <button type="submit" name="update">Update</button>
     </form>
   </div>

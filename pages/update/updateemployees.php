@@ -17,10 +17,6 @@ if (isset($_POST['update'])) {
   $sql = "update employee set name='$name', dept_id='$dept_id', m_id='$m_id', email='$email', phone='$phone' where emp_id ='$emp_id'";
 
   if ($conn->query($sql) === TRUE) {
-    //echo "<div style='text-align:center; margin-top:100px'>";
-    //echo "Updated Successfully";
-    //echo "<p><a href='index.php'>Go Back</a><p>";
-    //echo "</div>";
     header("Location: updateemployees.php?emp_id=$emp_id");
   } else {
     echo $conn->error;
@@ -53,7 +49,7 @@ if (isset($_POST['update'])) {
       <li><a href="../home/managers.php">Managers</a></li>
       <li style="float:right">
         <form class="searchbar" action="searchemployees.php" method="GET">
-          <input type="text" name="search" required placeholder="Search...">
+          <input type="search" name="search" required placeholder="Search...">
           <button type="submit">Search</button>
         </form>
       </li>
@@ -63,11 +59,11 @@ if (isset($_POST['update'])) {
 
   <div class="insert">
     <form action="" method="POST">
-      <input type="text" name="name" required value="<?php echo $row["name"]; ?>">
-      <input type="number" name="dept_id" required value="<?php echo $row["dept_id"] ?>">
-      <input type="number" name="m_id" required value="<?php echo $row["m_id"] ?>">
-      <input type="email" name="email" required value="<?php echo $row["email"] ?>">
-      <input type="tel" name="phone" required value="<?php echo $row["phone"] ?>">
+      <input type="text" name="name" required value="<?php echo $row["name"]; ?>" maxlength="50">
+      <input type="number" name="dept_id" required value="<?php echo $row["dept_id"] ?>" min="1">
+      <input type="number" name="m_id" required value="<?php echo $row["m_id"] ?>" min="1">
+      <input type="email" name="email" required value="<?php echo $row["email"] ?>" maxlength="255">
+      <input type="tel" name="phone" required value="<?php echo $row["phone"] ?>" pattern="[0-9]{11}">
       <button type="submit" name="update">Update</button>
     </form>
   </div>

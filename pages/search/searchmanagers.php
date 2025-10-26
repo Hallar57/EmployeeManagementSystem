@@ -34,7 +34,7 @@ $result = $conn->query($sql);
       <li><a href="../home/managers.php" class="active">Managers</a></li>
       <li style="float:right">
         <form class="searchbar" action="searchmanagers.php" method="GET">
-          <input type="text" name="search" required placeholder="Search...">
+          <input type="search" name="search" required placeholder="Search...">
           <button type="submit">Search</button>
         </form>
       </li>

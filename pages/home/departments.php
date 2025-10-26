@@ -21,7 +21,7 @@
       <li><a href="../home/managers.php">Managers</a></li>
       <li style="float:right">
         <form class="searchbar" action="../search/searchdepartments.php" method="GET">
-          <input type="text" name="search" required placeholder="Search...">
+          <input type="search" name="search" required placeholder="Search...">
           <button type="submit">Search</button>
         </form>
       </li>
@@ -30,8 +30,8 @@
 
   <div class="insert">
     <form action="../../database/insert/insertdepartments.php" method="POST">
-      <input type="text" name="name" required placeholder="Name">
-      <input type="text" name="building" required placeholder="Building">
+      <input type="text" name="name" required placeholder="Name" maxlength="50">
+      <input type="text" name="building" required placeholder="Building" maxlength="25">
       <button type="submit">Insert</button>
     </form>
   </div>

@@ -21,7 +21,7 @@
       <li><a href="../home/managers.php" class="active">Managers</a></li>
       <li style="float:right">
         <form class="searchbar" action="../search/searchmanagers.php" method="GET">
-          <input type="text" name="search" required placeholder="Search...">
+          <input type="search" name="search" required placeholder="Search...">
           <button type="submit">Search</button>
         </form>
       </li>
@@ -30,9 +30,9 @@
 
   <div class="insert">
     <form action="../../database/insert/insertmanagers.php" method="POST">
-      <input type="text" name="name" required placeholder="Name">
-      <input type="number" name="dept_id" required placeholder="Department ID">
-      <input type="tel" name="phone" required placeholder="Phone">
+      <input type="text" name="name" required placeholder="Name" maxlength="50">
+      <input type="number" name="dept_id" required placeholder="Department ID" min="1">
+      <input type="tel" name="phone" required placeholder="Phone"  pattern="[0-9]{11}">
       <button type="submit">Insert</button>
     </form>
   </div>
@@ -54,7 +54,7 @@
         while ($row = $result->fetch_assoc()) {
           echo "<tr>
             <td><a id='updatebutton' href=updatemanagers.php?m_id=" . $row["m_id"] . " >Update</a></td>
-            <td><a id='deletebutton' href=../../database/deletemanagers.php?m_id=" . $row["m_id"] . " >Delete</a></td>
+            <td><a id='deletebutton' href=../../database/delete/deletemanagers.php?m_id=" . $row["m_id"] . " >Delete</a></td>
             <td>" . $row["m_id"] . "</td>
             <td>" . $row["name"] . "</td>
             <td>" . $row["dept_id"] . "</td>
