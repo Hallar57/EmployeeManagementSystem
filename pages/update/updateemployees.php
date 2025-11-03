@@ -1,9 +1,9 @@
 <?php
 include '../../database/db.php';
 
-$emp_id = $_GET["emp_id"];
+$name = $_GET["name"];
 
-$sql = "select * from employee where emp_id='$emp_id'";
+$sql = "select * from employee where name='$name'";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 
@@ -14,15 +14,14 @@ if (isset($_POST['update'])) {
   $email = $_POST["email"];
   $phone = $_POST["phone"];
 
-  $sql = "update employee set name='$name', dept_id='$dept_id', m_id='$m_id', email='$email', phone='$phone' where emp_id ='$emp_id'";
+  $sql = "update employee set name='$name', dept_id='$dept_id', m_id='$m_id', email='$email', phone='$phone' where name ='$name'";
 
   if ($conn->query($sql) === TRUE) {
-    header("Location: updateemployees.php?emp_id=$emp_id");
+    header("Location: updateemployees.php?name=$name");
   } else {
     echo $conn->error;
   }
 }
-
 
 ?>
 
